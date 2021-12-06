@@ -15,6 +15,7 @@ h2 {
 }
 p {
   font-size: 1.5em;
+  text-align: justify;
 }
 /* font-size: izracunati i ubaciti u em velicinu.
 1em = 16px
@@ -25,105 +26,103 @@ Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, minmax(20px, auto));
-  grid-auto-rows: repeat(autofill);
+  grid-template-rows: repeat(2, minmax(20px, auto));
+  grid-auto-rows: minmax(50px, auto);
 
   grid-template-areas:
-    ". h h h h h h h img img img img"
-    "p p p p p p p p img img img img"
-    ". h2 h2 l l l l l l l l ."
-    ". d1 d1 p1 p1 p1 p1 p1 p1 p1 p1 ."
-    ". d2 d2 p2 p2 p2 p2 p2 p2 p2 p2 .";
+    ". name name name name name name name img img img img"
+    "data data data data data data data data img img img img";
 
   /* gap: 20px; */
 }
 /* pocetno zaglavlje sa imenom */
-.h {
+.name {
+  grid-area: name;
+
   display: flex;
   justify-content: space-evenly;
-  grid-area: h;
   height: max-content;
   background-color: cornflowerblue;
   color: white;
   text-align: center;
 }
 /* link ka pdf dokumentu */
-.h a {
+.name a {
   font-size: 1.5em;
   font-style: italic;
   color: white;
   text-decoration: none;
   padding: 20px;
 }
-.h a:hover {
+.name a:hover {
   background-color: white;
   color: cornflowerblue;
 }
+/* kraj link ka pdf dokumentu */
+
 /* profilna slika  */
 .img {
   grid-area: img;
-  justify-self: center;
+  justify-self: start;
+  padding-left: 50px;
 }
+
 /* osnovni podaci */
-.p {
-  grid-area: p;
+.data {
+  grid-area: data;
   justify-self: center;
 }
 
-.p p {
+.data p {
   padding: 0.5em;
 }
+
 /* naslovi oblasti */
-.h2 {
-  grid-area: h2;
+.naslov {
+  grid-column: 2 / span 2;
   background-color: cornflowerblue;
   color: white;
   padding: 10px;
   text-align: center;
 }
-.l {
-  grid-area: l;
+.line {
+  grid-column: 4 / span 8;
   border-bottom: 3px solid cornflowerblue;
 }
-/* kraj naslovi oblasti */
 
 /* datumi i podaci */
-.d1 {
-  grid-area: d1;
+.date {
+  grid-column: 2 / span 2;
   text-align: center;
   padding: 15px;
 }
-.p1 {
-  grid-area: p1;
+.description {
+  grid-column: 4 / span 8;
   padding: 15px;
 }
-.d2 {
-  grid-area: d2;
-  text-align: center;
-  padding: 15px;
-}
-.p2 {
-  grid-area: p2;
-  padding: 15px;
-}
+
 @media screen and (max-width: 770px) {
   .container {
     grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr; */
     grid-template-areas:
-      "h"
+      "name"
       "img"
-      "p"
-      "h2"
-      "d1"
-      "p1"
-      "d2"
-      "p2";
+      "data";
   }
+
   .h2 {
     text-align: center;
   }
+
   .h {
     flex-direction: column;
     width: 100%;
+  }
+
+  .naslov,
+  .date,
+  .description {
+    grid-column: auto / -1;
   }
 }
