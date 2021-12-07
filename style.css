@@ -5,117 +5,185 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, x-locale-body, sans-serif;
+  letter-spacing: -0.0027777778rem;
+  font-size: 100%;
+  color: #1b1b1b;
+  margin: auto;
 }
 h1 {
-  font-size: 3.5em;
-}
-h2 {
   font-size: 2em;
 }
-p {
-  font-size: 1.5em;
-  text-align: justify;
+h2 {
+  font-size: 1.2em;
 }
-/* font-size: izracunati i ubaciti u em velicinu.
-1em = 16px
-px/16=em 
-ili ovako
-Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm*/
+p {
+  font-size: 1em;
+  text-align: justify;
+  line-height: 1.75;
+}
 
 .container {
   display: grid;
+  width: 85vw;
+  margin: auto;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(2, minmax(20px, auto));
-  grid-auto-rows: minmax(50px, auto);
+  grid-template-rows: repeat(6, minmax(15px, auto));
+  grid-auto-rows: minmax(20px, auto);
 
   grid-template-areas:
-    ". name name name name name name name img img img img"
-    "data data data data data data data data img img img img";
+    "name name name name name name name name img img img img"
+    "born born born data1 data1 data1 data1 data1 img img img img"
+    "adress adress adress data2 data2 data2 data2 data2 img img img img"
+    "state state state data3 data3 data3 data3 data3 img img img img"
+    "phone phone phone data4 data4 data4 data4 data4 img img img img"
+    "mail mail mail data5 data5 data5 data5 data5 img img img img";
 
   /* gap: 20px; */
 }
 /* pocetno zaglavlje sa imenom */
 .name {
   grid-area: name;
-
-  display: flex;
-  justify-content: space-evenly;
-  height: max-content;
+  height: min-content;
+  padding: 10px 0;
   background-color: cornflowerblue;
   color: white;
   text-align: center;
 }
-/* link ka pdf dokumentu */
-.name a {
-  font-size: 1.5em;
-  font-style: italic;
-  color: white;
-  text-decoration: none;
-  padding: 20px;
-}
-.name a:hover {
-  background-color: white;
-  color: cornflowerblue;
-}
-/* kraj link ka pdf dokumentu */
 
 /* profilna slika  */
 .img {
   grid-area: img;
-  justify-self: start;
+  justify-self: end;
   padding-left: 50px;
 }
-
+img {
+  border-radius: 20%;
+}
 /* osnovni podaci */
-.data {
-  grid-area: data;
-  justify-self: center;
+.born {
+  grid-area: born;
+}
+.data1 {
+  grid-area: data1;
+}
+.adress {
+  grid-area: adress;
+}
+.data2 {
+  grid-area: data2;
+}
+.state {
+  grid-area: state;
+}
+.data3 {
+  grid-area: data3;
+}
+.phone {
+  grid-area: phone;
+}
+.data4 {
+  grid-area: data4;
+}
+.mail {
+  grid-area: mail;
+}
+.data5 {
+  grid-area: data5;
+}
+.born,
+.adress,
+.state,
+.phone,
+.mail {
+  padding: 0 15px;
 }
 
-.data p {
-  padding: 0.5em;
-}
-
-/* naslovi oblasti */
 .naslov {
-  grid-column: 2 / span 2;
+  grid-column: 1 / span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: cornflowerblue;
   color: white;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
 }
 .line {
-  grid-column: 4 / span 8;
+  grid-column: 4 / -1;
   border-bottom: 3px solid cornflowerblue;
 }
 
 /* datumi i podaci */
 .date {
-  grid-column: 2 / span 2;
-  text-align: center;
+  grid-column: 1 / span 3;
+  justify-self: center;
   padding: 15px;
 }
 .description {
-  grid-column: 4 / span 8;
-  padding: 15px;
+  grid-column: 4 / -1;
+  padding: 15px 0;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 950px) {
   .container {
-    grid-template-columns: 1fr;
-    /* grid-template-rows: 1fr; */
+    width: 85vw;
+    margin: auto;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(12, minmax(15px, auto));
     grid-template-areas:
       "name"
       "img"
-      "data";
+      "born"
+      "data1"
+      "adress"
+      "data2"
+      "state"
+      "data3"
+      "phone"
+      "data4"
+      "mail"
+      "data5";
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.8em;
+    text-align: justify;
+  }
+  .img {
+    justify-self: center;
+    margin-inline-end: 35px;
+  }
+
+  img {
+    border-radius: 30%;
+    padding: 20px;
+    width: 50vw;
+  }
+  .born,
+  .adress,
+  .state,
+  .phone,
+  .mail,
+  .data1,
+  .data2,
+  .data3,
+  .data4,
+  .data5 {
+    padding: 2px 15px;
+    justify-self: center;
   }
 
   .h2 {
     text-align: center;
   }
 
-  .h {
+  .name {
     flex-direction: column;
     width: 100%;
   }
@@ -123,6 +191,7 @@ Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport
   .naslov,
   .date,
   .description {
+    padding: 0.8em 0;
     grid-column: auto / -1;
   }
 }
