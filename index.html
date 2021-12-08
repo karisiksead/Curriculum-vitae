@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +16,21 @@
   </head>
   <body>
     <div class="container">
+      <!-- Navigacija -->
+      <div class="nav" id="nav">
+        <a href="#education">Obrazovanje</a>
+        <a href="#experience">Radno iskustvo</a>
+        <a href="#project">Projekti</a>
+        <a href="#seminars">Seminari</a>
+        <a href="#languages">Jezici</a>
+        <a href="#technologies">Tehnologije</a>
+        <a href="#other">Ostalo</a>
+        <a href="./Sead Karisk CV.pdf">Preuzmi PDF</a>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <i class="fa fa-bars" id="hamburger-menu"></i>
+      </div>
+      <!-- Kraj navigacije -->
       <div class="name">
         <h1>Sead Karišik</h1>
       </div>
@@ -18,7 +39,7 @@
       </div>
 
       <!-- Licni podaci -->
-      <div class="born">
+      <div class="born" style="margin-top: 1em">
         <p><strong>Datum rođenja:</strong></p>
       </div>
       <div class="data1">
@@ -47,7 +68,7 @@
       </div>
       <div class="data5">karisiksead@gmail.com</div>
       <!-- Obrazovanje -->
-      <div class="naslov" style="margin-top: 1em">
+      <div class="naslov" id="education" style="margin-top: 1em">
         <h2>Obrazovanje</h2>
       </div>
       <div class="line"></div>
@@ -108,7 +129,7 @@
       </div>
 
       <!-- Radno iskustvo -->
-      <div class="naslov">
+      <div class="naslov" id="experience">
         <h2>Radno iskustvo</h2>
       </div>
       <div class="line"></div>
@@ -212,7 +233,7 @@
       </div>
 
       <!-- Projekti, kursevi -->
-      <div class="naslov">
+      <div class="naslov" id="project">
         <h2>Projekti, kursevi</h2>
       </div>
       <div class="line"></div>
@@ -242,7 +263,7 @@
       </div>
 
       <!-- Seminari, treninzi -->
-      <div class="naslov">
+      <div class="naslov" id="seminars">
         <h2>Seminari, treninzi</h2>
       </div>
       <div class="line"></div>
@@ -305,7 +326,7 @@
       </div>
 
       <!-- Jezici -->
-      <div class="naslov">
+      <div class="naslov" id="languages">
         <h2>Jezici</h2>
       </div>
       <div class="line"></div>
@@ -326,7 +347,7 @@
       </div>
 
       <!-- Poznavanje tehnologija  -->
-      <div class="naslov">
+      <div class="naslov" id="technologies">
         <h2>Poznavanje tehnologija</h2>
       </div>
       <div class="line"></div>
@@ -337,7 +358,7 @@
       </div>
 
       <!-- Ostalo -->
-      <div class="naslov">
+      <div class="naslov" id="other">
         <h2>Ostalo</h2>
       </div>
       <div class="line"></div>
@@ -375,6 +396,22 @@
           arhiviranje istog.
         </p>
       </div>
+      <div class="footer-layout">
+        <span>Sead Karišik</span>
+        <i class="fa fa-map-pin"> AVNOJ-a bb Novi Pazar</i>
+        <i class="fa fa-envelope"> karisiksead@gmail.com</i>
+        <i class="fa fa-phone"> +381 65 399 2 399</i>
+      </div>
     </div>
+    <script>
+      document.getElementById("hamburger-menu").onclick = function () {
+        let y = document.getElementById("nav");
+        if (y.style.display === "none") {
+          y.style.display = "flex";
+        } else {
+          y.style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>
