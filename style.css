@@ -195,15 +195,16 @@ img {
     height: fit-content;
     padding: 15px;
     position: absolute;
-    margin-block-start: 50px;
+    margin-block-start: 70px;
     font-size: 0.85em;
     line-height: 1.75;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .hamburger-menu {
     display: flex;
     justify-content: end;
-    margin-block-start: 21px;
-    margin-inline-end: 21px;
+    margin-block-start: 35px;
+    margin-block-end: -40px;
   }
   .hamburger-menu i {
     font-size: 1.4em;

@@ -34,7 +34,7 @@
       <div class="name">
         <h1>Sead Karišik</h1>
       </div>
-      <div class="img">
+      <div class="img" id="img1">
         <img src="./images/seadkarisk.jpg" alt="seadkarisik" />
       </div>
 
@@ -406,10 +406,13 @@
     <script>
       document.getElementById("hamburger-menu").onclick = function () {
         let y = document.getElementById("nav");
+        let x = document.getElementById("img1");
         if (y.style.display === "none") {
           y.style.display = "flex";
+          x.style.visibility = "hidden";
         } else {
           y.style.display = "none";
+          x.style.visibility = "visible";
         }
       };
     </script>
